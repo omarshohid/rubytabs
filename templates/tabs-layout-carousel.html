@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<!--[if IE 7]> <html class="ie ie7"> <![endif]-->
+<!--[if IE 8]> <html class="ie ie8"> <![endif]-->
+<!--[if (gt IE 8)|!(IE)]> <html> <![endif]-->
+<head>
+
+    <!-- Page Infomations -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="One of the best Tabs - Slider jQuery plugins">
+    <meta name="keywords" content="tabs, slider, carousel, gallery, touch, swipe, drag, css3, responsive, nested, multi, transform, transition, lazyload, fullscreen">
+    <meta name="author" content="RubyTabs - HaiBach">
+    
+    <!-- Title of page -->
+    <title>OVERVIEW | RUBYTABS</title>
+
+    <!-- Favicon & apple-icon -->
+    <link rel="shortcut icon" href="../libs/imgs/icons/favicon.ico">
+    <link rel="icon" sizes="192x192" href="../libs/imgs/icons/icon-highres.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../libs/imgs/icons/touch-icon-iphone-retina.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../libs/imgs/icons/touch-icon-ipad-retina.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="../libs/imgs/icons/touch-icon-ipad-pro.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../libs/imgs/icons/touch-icon-iphone-6-plus.png">
+
+
+    <!-- CSS link -->
+    <link rel="stylesheet" href="../libs/css/ruby01.css">
+    <link rel="stylesheet" href="../libs/css/styles.custom.css">
+    <link rel="stylesheet" href="../ruby/rubytabs.css">
+
+
+    <!-- CSS embed -->
+    <style>
+        
+        /**
+         * STYLE CUSTOM FOR HOME
+         */
+        .zone-pattern2 {
+            padding-top: 50px; padding-bottom: 50px;
+            margin-bottom: 30px;
+            background-color: #cc0055 !important;
+        }
+        .bg-wrap {
+            padding-top: 24px; padding-bottom: 24px;
+            background-color: #fff;
+            border-radius: 4px;
+        }
+        .area-highlight {
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px dashed #cc0055;
+            border-radius: 4px;
+        }
+        
+        /* Frame image */
+        .frame {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .frame-bg               { border: none; background-color: #e5e5e5; }
+        .frame > img            { display: inline-block; zoom: 1; }
+        .frame-img1             { margin-right: 50px; }
+
+        @media only screen and (min-width: 768px) and (max-width: 959px) {
+            .frame-img1         { margin-right: 0; margin-bottom: 20px; }
+        }
+        @media only screen and (min-width: 1px) and (max-width: 767px) {
+            .frame-img1         { margin-right: 0px; }
+        }
+        
+        /* Image responsive */
+        @media only screen and (min-width: 1px) and (max-width: 698px) {
+            .img-res { display: block; width: 100%; height: auto; }
+        }
+
+        /* FEATURES ITEM */
+        .feature-item {
+            float: left;
+            margin-bottom: 70px;
+        }
+        .feature-item .span8 {
+            text-align: center;
+        }
+        .feature-item img {
+            display: inline-block;
+            max-width: 448px;
+            width: 100%; height: auto;
+        }
+        
+        /* SIZE INFO */
+        .sizeinfo {
+            float: left;
+            margin-bottom: 30px;
+        }
+        .sizeinfo-main {
+            float: left;
+            margin-bottom: 20px;
+        }
+        .sizeinfo-sub {
+            float: left;
+            padding: 10px 20px;
+            border: 1px dashed #ccc;
+            border-radius: 4px;
+        }
+
+        .sizeinfo-text {
+            float: left;
+        }
+        .sizeinfo-num {
+            float: left;
+            padding-left: 20px; padding-right: 20px;
+        }
+        .huge-text {
+            font-size: 110px;
+            line-height: .7em;
+        }
+
+
+
+
+        /**
+         * TABS PREVIEW
+         */
+        .tabs-preview > .rt01viewport {
+            padding-top: 30px !important;
+        }
+
+
+        /* PAGINATION ITEM */
+        .rt01pag.style-arrow {
+            border-bottom: none !important;
+        }
+        .style-arrow > .rt01paginner > .rt01pagitem {
+            min-height: 40px;
+            line-height: 40px;
+            
+            padding-left: 20px; padding-right: 20px;
+            margin-left: 12px; margin-right: 12px;
+            background-color: #f5f5f5;
+            color: #999;
+        }
+        .style-arrow > .rt01paginner > .rt01pagitem:before {
+            display: block;
+            position: absolute;
+            content: "";
+            top: 0; right: 100%;
+            width: 0; height: 0;
+            border: solid #f5f5f5;
+            border-width: 31px 0 31px 20px;
+            border-left-color: transparent !important;
+        }
+        .style-arrow > .rt01paginner > .rt01pagitem:after {
+            display: block;
+            position: absolute;
+            content: "";
+            top: 0; left: 100%;
+            width: 0; height: 0;
+            border: solid transparent;
+            border-width: 31px 0 31px 20px;
+            border-left-color: #f5f5f5;
+        }
+
+        /* PAGINATION ITEM CURRENT */
+        .style-arrow > .rt01paginner > .rt01pagitem.rt01cur {
+            background-color: #cc0055;
+            color: #fff !important;
+        }
+        .style-arrow > .rt01paginner > .rt01pagitem.rt01cur:before {
+            border-color: #cc0055;
+        }
+        .style-arrow > .rt01paginner > .rt01pagitem.rt01cur:after {
+            border-left-color: #cc0055;
+        }
+
+        /* PAGITEM FIRST - LAST */
+        .style-arrow > .rt01paginner > .rt01pagitem.rt01first {
+            border-radius: 4px 0 0 4px;
+        }
+        .style-arrow > .rt01paginner > .rt01pagitem.rt01last {
+            border-radius: 0 4px 4px 0;
+        }
+        .style-arrow > .rt01paginner > .rt01pagitem.rt01first:before,
+        .style-arrow > .rt01paginner > .rt01pagitem.rt01last:after       { display: none; }
+
+        /* VIDEO */
+        .tabs-preview .rt01video.rt01img img {
+            width: 100%;
+            height: auto;
+        }
+
+
+
+
+
+        /**
+         * SLIDER PREVIEW
+         */
+        .slider-preview .rt01viewport {
+        }
+        .slider-preview .rt01media {
+            right: 10px; top: 10px;
+        }
+
+        /* BORDER CHO SLIDE */
+        .slider-preview.rt01fx-line .rt01slide  {
+            border-radius: 4px;
+
+            -webkit-transtion: opacity .4s;
+                   transition: opacity .4s;
+        }
+        .slider-preview.rt01fx-line .rt01slide.rt01cur {
+            opacity: 1;
+        }
+
+        @media only screen and (min-width: 768px) {
+            .slider-preview.rt01fx-line .rt01slide {
+                /*border: 10px solid #444;*/
+                /*border-radius: 4px;*/
+
+                -webkit-box-sizing: border-box;
+                    box-sizing: border-box;
+            }
+        }
+
+
+
+
+        /**
+         * SLIDER NESTED
+         */
+        .slider-nested .rt01imgback {
+            border-radius: 4px;
+        }
+
+
+
+
+        /**
+         * TABS FORM
+         */
+        .tabs-form .rt01slide {
+        }
+
+
+        
+
+        /**
+         * VIDEOS
+         */
+        .video img {
+            border-radius: 4px;
+        }
+
+
+
+
+        /**
+         * MAP
+         */
+        .ruby-map {
+            overflow: hidden;
+            margin-left: 20px; margin-right: 20px;
+            padding: 10px;
+            padding-top: 0;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .ruby-map iframe {
+            display: block;
+            margin: 0;
+        }
+        .map-head {
+            padding-top: 5px; padding-bottom: 10px;
+            background-color: #fff;
+            border-bottom: 1px solid #ccc;
+        }
+        .map-head > * {
+            margin-bottom: 0;
+            color: #aaa;
+            text-align: center;
+        }
+        @media only screen and (max-width: 767px) {
+            .ruby-map > iframe {
+                max-height: 400px;
+            }
+        }
+
+
+
+
+
+        /**
+         * PAGINATION STYLE
+         */
+
+        /* PAG MARK CUSTOM STYLE 1 */
+        .mark-style1 .rt01pag       { border-bottom-color: #cc0055 !important; }
+        .mark-style1 .rt01paginner  { z-index: 2; }
+
+        .mark-style1 .rt01pagitem               { color: #777; }
+        .mark-style1 .rt01pagitem.rt01cur       { background-color: transparent !important; }
+
+        .mark-style1 .rt01pagmark {
+            position: absolute;
+            bottom: 0;
+            height: 100%;
+        }
+        .mark-style1 .rt01pagmark-item {
+            height: 100% !important;
+        }
+
+
+        /* PAG MARK CUSTOM STYLE 2 */
+        .mark-style2 .rt01pagitem:hover {
+            background-color: hsla(0,0%,0%,.5);
+            box-shadow: none;
+        }
+        .mark-style2 .rt01pagitem.rt01cur {
+            background-color: hsla(0,0%,0%,.2);
+            box-shadow: none;
+        }
+
+        .mark-style2 .rt01pagmark {
+            position: absolute;
+            top: 9px;
+        }
+        .mark-style2 .rt01pagmark-item {
+            height: 8px !important;
+            margin-left: -1px;
+            background-color: #cc0055;
+            border: 1px solid #ff0077;
+            border-radius: 50%;
+        }
+
+
+        /* PAGINATION STYLE CLASSIC CUSTOM */
+        /*.tabs-form.rt01classic .rt01pagitem.rt01first { margin-left: 0; }
+        .tabs-form.rt01classic .rt01pagitem.rt01last  { margin-right: 0; }*/
+        .tabs-form .rt01pag {
+            border-bottom: none !important;
+        }
+        .tabs-form .rt01pagitem {
+            border: 1px solid transparent;
+            border-radius: 3px;
+            margin-bottom: 0;
+        }
+        .tabs-form .rt01pagitem.rt01cur {
+            border-color: #cc0055;
+            color: #cc0055;
+        }
+
+        .tabs-form .rt01viewport {
+            padding-top: 30px !important;
+        }
+
+
+
+
+
+
+        /**
+         * TABS CUSTOM PREVIEW
+         */
+        .tabs-custom {}
+
+
+        /**
+         * PRODUCT ITEM
+         */
+        .product-item .thumbnail {
+            display: block;
+            width: 100%; height: auto;
+            margin-bottom: 0;
+            max-width: 512px;
+            border-radius: 4px 4px 0 0;
+        }
+        .product-content {
+            padding: 12px;
+            border: solid #aaa;
+            border-width: 0 1px;
+        }
+        .product-content > p {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            height: 44px;
+        }
+        
+        .product-price {
+            margin-bottom: 10px;
+        }
+        .product-price .discount {
+            display: inline-block;
+            width: 50%;
+            font-size: 60px;
+            margin-bottom: 0;
+        }
+        .product-price .detail {
+            display: inline-block;
+            width: 45%;
+            font-size: 19px;
+            line-height: 1.4em;
+        }
+        .product-price .original {
+            text-decoration: line-through;
+            color: #999;
+        }
+        .product-price .current {
+            text-decoration: underline;
+        }
+
+        .product-viewmore {
+            display: block;
+            border: 1px solid #cc0055;
+            border-radius: 0 0 4px 4px;
+            color: #cc0055;
+            text-align: center;
+            font-size: 16px;
+            line-height: 50px;
+        }
+        .product-viewmore:hover {
+            background-color: #cc0055;
+            color: #fff;
+        }
+
+        @media only screen and (max-width: 767px) {
+            .product-price .discount {
+                font-size: 46px;
+            }
+            .product-price .detail {
+                font-size: 16px;
+            }
+        }
+
+
+    </style>
+    
+
+    
+</head>
+<body>
+
+    <!-- HEADER - begin
+    ======================================================================== -->
+    <div class="wrapper header logo-left">
+    <div class="container">
+        
+        <!-- Logo - begin
+        ....................................................................  -->
+        <a class="logo" href="../templates/" data-mScale="100">RubyTabs</a>
+        <!-- Logo - end
+        ....................................................................  -->
+
+        
+
+        <!-- Menu - begin
+        ....................................................................  -->
+        <nav class="menu-hor menu-wide menu-outline fx-animate text-small">
+            <ul class="menu">
+
+                <li class="menu-parent-lv1">
+                    <a  href="page.templates.html">Tabs</a>
+                    <ul class="menu">
+                        
+                        <li>
+                            <a href="#">Effects</a>
+                            <ul class="menu">
+                                
+                                <li><a href="tabs.effects.one.html">One effect</a></li>
+                                <li><a href="tabs.effects.outin.html">Out/In effect</a></li>
+                                <li><a href="tabs.effects.powerline.html">Powerline effect</a></li>
+                                <li><a href="tabs.effects.fade.html">Fade classic effect</a></li>
+                                <li><a href="tabs.effects.random.html">Random effects</a></li>
+                                <li><a href="tabs.effects.others.html">Control animation</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#">Layout</a>
+                            <ul class="menu">
+                                
+                                <li><a href="tabs.mobile.html">Tabs mobile</a></li>
+                                <li><a href="tabs.vertical.html">Tabs vertical</a></li>
+                                <li><a href="tabs.nested.html">Tabs nested</a></li>
+                                <li><a href="tabs.bullet.html">Tabs bullet</a></li>
+
+                                <li><a href="tabs.fullwidth.html">Tabs fullwidth</a></li>
+                                <li><a href="tabs.page.html">Tabs page</a></li>
+                                <li><a href="tabs.fancybox.html">Tabs in fancybox</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#">Styles</a>
+                            <ul class="menu">
+                                
+                                <li><a href="tabs.style.flat.html">Flat</a></li>
+                                <li><a href="tabs.style.flatbox.html">Flatbox</a></li>
+                                <li><a href="tabs.style.classic.html">Classic</a></li>
+                                <li><a href="tabs.style.pill.html">Pill</a></li>
+                                <li><a href="tabs.style.underline.html">Underline</a></li>
+                                
+                                <li><a href="tabs.sizes.html">Tabs sizes</a></li>
+                                <li><a href="tabs.style.highlight.html">Highlight</a></li>
+                                <li><a href="tabs.style.fullcolor.html">Fullcolor</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#">Positions</a>
+                            <ul class="menu">
+                                
+                                <li><a href="tabs.hor.topBegin.html">Horizontal top begin</a></li>
+                                <li><a href="tabs.hor.topCenter.html">Horizontal top center</a></li>
+                                <li><a href="tabs.hor.topEnd.html">Horizontal top end</a></li>
+                                <li><a href="tabs.hor.topJustified.html">Horizontal top justified</a></li>
+                                <li><a href="tabs.hor.bottomBegin.html">Horizontal bottom begin</a></li>
+                                <li><a href="tabs.hor.bottomCenter.html">Horizontal bottom center</a></li>
+                                <li><a href="tabs.hor.bottomEnd.html">Horizontal bottom end</a></li>
+                                <li><a href="tabs.hor.bottomJustified.html">Horizontal bottom justified</a></li>
+
+                                <li><a class="bo-t" href="tabs.ver.topBegin.html">Vertical top begin</a></li>
+                                <li><a href="tabs.ver.topCenter.html">Vertical top center</a></li>
+                                <li><a href="tabs.ver.topEnd.html">Vertical top end</a></li>
+                                <li><a href="tabs.ver.bottomBegin.html">Vertical bottom begin</a></li>
+                                <li><a href="tabs.ver.bottomCenter.html">Vertical bottom center</a></li>
+                                <li><a href="tabs.ver.bottomEnd.html">Vertical bottom end</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#">Media</a>
+                            <ul class="menu">
+                                
+                                <li><a href="tabs.media.lazyload.html">Image lazyload</a></li>
+                                <li><a href="tabs.media.ajax.html">Load ajax content</a></li>
+                            </ul>
+                        </li>
+
+
+                        <li>
+                            <a href="#">Slideshow</a>
+                            <ul class="menu">
+                                
+                                <li><a href="tabs.slideshow.timerArc.html">Arc timer</a></li>
+                                <li><a href="tabs.slideshow.timerBar.html">Bar timer</a></li>
+                                <li><a href="tabs.slideshow.timerNumber.html">Number timer</a></li>
+                                <li><a href="tabs.slideshow.timerOnly.html">Timer only</a></li>
+                                <li><a href="tabs.slideshow.random.html">Slideshow random</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#">APIs</a>
+                            <ul class="menu right">
+                                
+                                <li><a href="tabs.swipeBody.html">Swipe body</a></li>
+                                <li><a href="tabs.api.addremove.html">Add-remove tabs</a></li>
+                                <li><a href="tabs.api.addAjax.html">Add ajax</a></li>
+                                <li><a href="tabs.api.callback.html">Callback events</a></li>
+                                <li><a href="tabs.api.showByDevice.html">Show by device</a></li>
+                                <li><a href="tabs.api.showFrom.html">Show from</a></li>
+                                <li><a href="tabs.api.deeplinking.html">Deep linking</a></li>
+                                <li><a href="tabs.api.deeplinkingMulti.html">Deep linking multi</a></li>
+                                <li><a href="tabs.api.deeplinkingID.html">Deep linking id</a></li>
+                                <li><a href="tabs.api.cookie.html">Cookie</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li class="menu-parent-lv1">
+                    <a href="page.templates.html">Slider</a>
+                    <ul class="menu">
+                        
+                        <li>
+                            <a href="#">Effects</a>
+                            <ul class="menu">
+                                
+                                <li><a href="tabs.effects.one.html">One effect</a></li>
+                                <li><a href="tabs.effects.outin.html">Out/In effect</a></li>
+                                <li><a href="tabs.effects.powerline.html">Powerline effect</a></li>
+                                <li><a href="tabs.effects.fade.html">Fade classic effect</a></li>
+                                <li><a href="tabs.effects.random.html">Random effects</a></li>
+                                <li><a href="tabs.effects.others.html">Control animation</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#">Layout</a>
+                            <ul class="menu">
+                                
+                                <li><a href="tabs.mobile.html">Tabs mobile</a></li>
+                                <li><a href="tabs.vertical.html">Tabs vertical</a></li>
+                                <li><a href="tabs.nested.html">Tabs nested</a></li>
+                                <li><a href="tabs.bullet.html">Tabs bullet</a></li>
+
+                                <li><a href="tabs.fullwidth.html">Tabs fullwidth</a></li>
+                                <li><a href="tabs.page.html">Tabs page</a></li>
+                                <li><a href="tabs.fancybox.html">Tabs in fancybox</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#">Styles</a>
+                            <ul class="menu">
+                                
+                                <li><a href="tabs.style.flat.html">Flat</a></li>
+                                <li><a href="tabs.style.flatbox.html">Flatbox</a></li>
+                                <li><a href="tabs.style.classic.html">Classic</a></li>
+                                <li><a href="tabs.style.pill.html">Pill</a></li>
+                                <li><a href="tabs.style.underline.html">Underline</a></li>
+                                
+                                <li><a href="tabs.sizes.html">Tabs sizes</a></li>
+                                <li><a href="tabs.style.highlight.html">Highlight</a></li>
+                                <li><a href="tabs.style.fullcolor.html">Fullcolor</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#">Positions</a>
+                            <ul class="menu">
+                                
+                                <li><a href="tabs.hor.topBegin.html">Horizontal top begin</a></li>
+                                <li><a href="tabs.hor.topCenter.html">Horizontal top center</a></li>
+                                <li><a href="tabs.hor.topEnd.html">Horizontal top end</a></li>
+                                <li><a href="tabs.hor.topJustified.html">Horizontal top justified</a></li>
+                                <li><a href="tabs.hor.bottomBegin.html">Horizontal bottom begin</a></li>
+                                <li><a href="tabs.hor.bottomCenter.html">Horizontal bottom center</a></li>
+                                <li><a href="tabs.hor.bottomEnd.html">Horizontal bottom end</a></li>
+                                <li><a href="tabs.hor.bottomJustified.html">Horizontal bottom justified</a></li>
+
+                                <li><a class="bo-t" href="tabs.ver.topBegin.html">Vertical top begin</a></li>
+                                <li><a href="tabs.ver.topCenter.html">Vertical top center</a></li>
+                                <li><a href="tabs.ver.topEnd.html">Vertical top end</a></li>
+                                <li><a href="tabs.ver.bottomBegin.html">Vertical bottom begin</a></li>
+                                <li><a href="tabs.ver.bottomCenter.html">Vertical bottom center</a></li>
+                                <li><a href="tabs.ver.bottomEnd.html">Vertical bottom end</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#">Media</a>
+                            <ul class="menu">
+                                
+                                <li><a href="tabs.media.lazyload.html">Image lazyload</a></li>
+                                <li><a href="tabs.media.ajax.html">Load ajax content</a></li>
+                            </ul>
+                        </li>
+
+
+                        <li>
+                            <a href="#">Slideshow</a>
+                            <ul class="menu">
+                                
+                                <li><a href="tabs.slideshow.timerArc.html">Arc timer</a></li>
+                                <li><a href="tabs.slideshow.timerBar.html">Bar timer</a></li>
+                                <li><a href="tabs.slideshow.timerNumber.html">Number timer</a></li>
+                                <li><a href="tabs.slideshow.timerOnly.html">Timer only</a></li>
+                                <li><a href="tabs.slideshow.random.html">Slideshow random</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="#">APIs</a>
+                            <ul class="menu right">
+                                
+                                <li><a href="tabs.swipeBody.html">Swipe body</a></li>
+                                <li><a href="tabs.api.addremove.html">Add-remove tabs</a></li>
+                                <li><a href="tabs.api.addAjax.html">Add ajax</a></li>
+                                <li><a href="tabs.api.callback.html">Callback events</a></li>
+                                <li><a href="tabs.api.showByDevice.html">Show by device</a></li>
+                                <li><a href="tabs.api.showFrom.html">Show from</a></li>
+                                <li><a href="tabs.api.deeplinking.html">Deep linking</a></li>
+                                <li><a href="tabs.api.deeplinkingMulti.html">Deep linking multi</a></li>
+                                <li><a href="tabs.api.deeplinkingID.html">Deep linking id</a></li>
+                                <li><a href="tabs.api.cookie.html">Cookie</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </li>
+
+                <li><a href="page.howto.html">How to</a></li>
+                <li><a href="../documentation/documentation.html">Docs</a></li>
+                <li><a href="#">Buy now!</a></li>
+
+            </ul>
+        </nav>
+        <!-- Menu - end
+        ....................................................................  -->
+
+    </div>
+    </div>
+    <!-- HEADER - end
+    ======================================================================== -->
+
+
+
+
+
+
+
+    <!-- PLUGINS PREVIEW - begin
+    ======================================================================== -->
+    <div class="wrapper pattern-hl">
+    <div class="container">
+        
+        <!-- TITLE HEADING - begin -->
+        <div class="title-head title-head-left">
+        <div class="title-head-inner">
+            <h1>LAYOUT CAROUSEL</h1>
+            <!-- <h5>One of best Tabs &amp; Slider plugins</h5> -->
+        </div>
+        </div>
+        <!-- TITLE HEADING - end -->
+
+
+
+        <!-- TABS PREVIEW - begin -->
+        <div class="rt01 tabs-custom ma-b-50"
+            data-tabs='{
+                "optionsPlus" : "carousel",
+                "widthSlide"  : [ 320, [220, 1, 767] ]
+            }'>
+
+
+            <div class="product-item">
+                <img class="thumbnail" src="imgs/food-thumbnail1.jpg" alt="">
+                
+                <div class="product-content">
+                    <p class="font-blokk">Lorem ipsum dolor sit amet, consectetur adipisicing</p>
+
+                    <div class="product-price">
+                        <h1 class="discount">49%</h1>
+                        <div class="detail">
+                            <div class="original">129.000</div>
+                            <div class="current">65.000</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-footer">
+                    <a class="product-viewmore" href="#">View more</a>
+                </div>
+            </div>
+
+
+            <div class="product-item">
+                <img class="thumbnail" src="imgs/food-thumbnail2.jpg" alt="">
+                
+                <div class="product-content">
+                    <p class="font-blokk">Integer dignissim volutpat nibh, quis ultricies nunc vulputate vitae</p>
+
+                    <div class="product-price">
+                        <h1 class="discount">31%</h1>
+                        <div class="detail">
+                            <div class="original">95.000</div>
+                            <div class="current">65.000</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-footer">
+                    <a class="product-viewmore" href="#">View more</a>
+                </div>
+            </div>
+
+
+            <div class="product-item">
+                <img class="thumbnail" src="imgs/food-thumbnail3.jpg" alt="">
+                
+                <div class="product-content">
+                    <p class="font-blokk">Sed nec ligula nec libero iaculis lacinia ac a arcu.</p>
+
+                    <div class="product-price">
+                        <h1 class="discount">27%</h1>
+                        <div class="detail">
+                            <div class="original">200.000</div>
+                            <div class="current">145.000</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-footer">
+                    <a class="product-viewmore" href="#">View more</a>
+                </div>
+            </div>
+
+
+            <div class="product-item">
+                <img class="thumbnail" src="imgs/food-thumbnail4.jpg" alt="">
+                
+                <div class="product-content">
+                    <p class="font-blokk">Nulla consectetur congue rutrum. Integer gravida</p>
+
+                    <div class="product-price">
+                        <h1 class="discount">56%</h1>
+                        <div class="detail">
+                            <div class="original">195.000</div>
+                            <div class="current">85.000</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-footer">
+                    <a class="product-viewmore" href="#">View more</a>
+                </div>
+            </div>
+            
+
+            <div class="product-item">
+                <img class="thumbnail" src="imgs/food-thumbnail5.jpg" alt="">
+                
+                <div class="product-content">
+                    <p class="font-blokk">Quisque suscipit fringilla metus non imperdiet</p>
+
+                    <div class="product-price">
+                        <h1 class="discount">42%</h1>
+                        <div class="detail">
+                            <div class="original">350.000</div>
+                            <div class="current">200.000</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-footer">
+                    <a class="product-viewmore" href="#">View more</a>
+                </div>
+            </div>
+            
+
+            <div class="product-item">
+                <img class="thumbnail" src="imgs/food-thumbnail6.jpg" alt="">
+                
+                <div class="product-content">
+                    <p class="font-blokk">Phasellus elementum eros et purus pretium eu dignissim tellus facilisis</p>
+
+                    <div class="product-price">
+                        <h1 class="discount">19%</h1>
+                        <div class="detail">
+                            <div class="original">220.000</div>
+                            <div class="current">180.000</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-footer">
+                    <a class="product-viewmore" href="#">View more</a>
+                </div>
+            </div>
+
+
+            <div class="product-item">
+                <img class="thumbnail" src="imgs/food-thumbnail7.jpg" alt="">
+                
+                <div class="product-content">
+                    <p class="font-blokk">Aliquam sit amet massa sed sem sollicitudin ornare. Donec in luctus ante.</p>
+
+                    <div class="product-price">
+                        <h1 class="discount">28%</h1>
+                        <div class="detail">
+                            <div class="original">200.000</div>
+                            <div class="current">145.000</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-footer">
+                    <a class="product-viewmore" href="#">View more</a>
+                </div>
+            </div>
+
+
+            <div class="product-item">
+                <img class="thumbnail" src="imgs/food-thumbnail8.jpg" alt="">
+                
+                <div class="product-content">
+                    <p class="font-blokk">Sed et lorem orci. Nulla tempor tristique ipsum vitae pharetra.</p>
+
+                    <div class="product-price">
+                        <h1 class="discount">69%</h1>
+                        <div class="detail">
+                            <div class="original">320.000</div>
+                            <div class="current">99.000</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-footer">
+                    <a class="product-viewmore" href="#">View more</a>
+                </div>
+            </div>
+
+        </div>
+        </div>
+        <!-- TABS PREVIEW - end -->
+    
+    </div>
+    </div>
+    <!-- PLUGINS PREVIEW - end
+    ======================================================================== -->
+
+
+
+    
+
+    <!-- Footer - begin
+    ======================================================================== -->
+    <div class="wrapper footer">
+    <div class="container">
+        
+        <!-- Copyright -->
+        <section class="copyright">
+            <p>&copy; HaiBach. All Rights Reserved.</p>
+        </section>
+
+    </div>
+    </div>
+    <!-- Footer - end
+    ======================================================================== -->
+
+
+
+
+
+    <!-- Script - begin
+    ======================================================================== -->
+    <!-- <script src="../libs/scripts/jquery-last.min.js"></script> -->
+    <script src="../libs/scripts/jquery-1.9.0.min.js"></script>
+    <script src="../ruby/rubytabs.js"></script> <!-- RubyTabs Plugins -->
+    <script src="../libs/scripts/jquery.mousewheel.min.js"></script> <!-- Mousewheel Plugins -->
+
+
+    <script type="text/javascript">
+    </script>
+    <!-- Script - end
+    ======================================================================== -->
+
+</body>
+</html>
